@@ -1,12 +1,13 @@
-const TodoList = ({ task, toggleComplite }) => {
+const TodoList = ({ task, toggleComplite, deleteTodo }) => {
   return (
     <div
-      className={`lists ${task.complited ? "complited && checked-icon" : ""}`}
-      onClick={() => toggleComplite(task.id)}
-    >
-      <div className="left-box">
+      className="lists">
+      <div className={`left-box ${task.complited ? "complited" : ""}`}
+      onClick={() => toggleComplite(task.id)}>
+        
         <button className="check-btn ">
-          <div className="check-icon">
+          <div className={`check-icon ${task.complited ? "complited && checked-icon" : ""}`}
+      onClick={() => toggleComplite(task.id)}>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
                 <path
@@ -22,7 +23,7 @@ const TodoList = ({ task, toggleComplite }) => {
         <li className={"list"}>{task.task}</li>
       </div>
       <div className="remove-icon">
-        <span>
+        <span onClick={()=> deleteTodo(task.id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
             <path
               fill="#494C6B"

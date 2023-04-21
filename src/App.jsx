@@ -8,21 +8,26 @@ import { v4 as uuidv4 } from 'uuid';
 uuidv4();
 
 function App() {
+  
 
+  // main function
   const [todos, setTodos] = useState([])
-
   const addTodo = todo => {
     setTodos([...todos, {
       id: uuidv4(), task: todo, complited: false, isEditing: false
     }])
-
     console.log(todos)
-
   }
 
+  // to check tasks as complited 
   const toggleComplite = (id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, complited : !todo.complited} : todo))
   }
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <div className="App">
       <div className="main">
@@ -35,7 +40,8 @@ function App() {
         <InputField addTodo={addTodo}/>
         {todos.map((todo, index) => (
           <TodoList  task={todo} key={index}
-          toggleComplite={toggleComplite}/>
+          toggleComplite={toggleComplite}
+          deleteTodo={deleteTodo}/>
           
           ))}
       </div>
