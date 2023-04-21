@@ -1,67 +1,97 @@
-.main{
-    display: flex;
-    flex-direction: column;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-top: 48px;
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #f2f2f2;
+  background-image: url(./assets/images/bg-mobile-light.jpg);
+  background-size: cover;
+  max-width: 100%;
+  background-repeat: no-repeat;
+}
+.App {
+  display: flex;
+  margin: auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
 }
-.header{
-    color: #fff;
-    font-size: 32px;
-}
-
-.input{
-    height: 48px;
-    width: 327px;
-    border-radius: 5px;
-    border: none;
+.header {
+  color: #fff;
+  font-size: 32px;
 }
 
-
-.lists{
-    height: 48px;
-    width: 327px;
-    border-radius: 5px;
-    background-color: #fff;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.todo-input {
+  height: 48px;
+  width: 327px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
-.check-icon{
-    margin-left: 20px;
-    height: 20px;
-    width: 20px;
-    background:linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);;
-    border-radius: 50%;
+.lists {
+  height: 48px;
+  width: 327px;
+  border-radius: 5px;
+  background-color: #fff;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3e4f1;
 }
 
-.check-icon svg{
-    margin: 5px auto;
+.check-icon {
+  margin-left: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #d1d2da;
 }
 
-.check-btn{
-    border: none;
-    background: none;
+.checked-icon {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
 
-.list{
-    padding-left: 12px;
+.check-icon svg {
+  margin: 5px auto;
 }
 
-
-.left-box{
-    display: flex;
+.check-btn {
+  border: none;
+  background: none;
 }
 
+.list {
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #494c6b;
+}
 
-.remove-icon{
-    padding-right: 20px;
+.left-box {
+  display: flex;
+}
+
+.remove-icon {
+  padding-right: 20px;
+}
+
+.complited {
+  color: #d1d2da;
+  text-decoration: line-through;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(./assets/images/bg-desktop-light.jpg);
+  }
 }

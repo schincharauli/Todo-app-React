@@ -5,17 +5,3 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'JetBrains Mono', monospace;
-  background-color: #F2F2F2;
-  background-image: url(./assets/images/bg-mobile-light.jpg);
-  background-size: cover;
-  max-width: 100%;
-  background-repeat: no-repeat;
-}
-
-@media (min-width: 768px){
-  body{
-    background-image: url(./assets/images/bg-desktop-light.jpg);
-  }
-}
