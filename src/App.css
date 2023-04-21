@@ -1,0 +1,67 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 48px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    color: #fff;
+    font-size: 32px;
+}
+
+.input{
+    height: 48px;
+    width: 327px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.lists{
+    height: 48px;
+    width: 327px;
+    border-radius: 5px;
+    background-color: #fff;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-icon{
+    margin-left: 20px;
+    height: 20px;
+    width: 20px;
+    background:linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);;
+    border-radius: 50%;
+}
+
+.check-icon svg{
+    margin: 5px auto;
+}
+
+.check-btn{
+    border: none;
+    background: none;
+}
+
+.list{
+    padding-left: 12px;
+}
+
+
+.left-box{
+    display: flex;
+}
+
+
+.remove-icon{
+    padding-right: 20px;
+}
