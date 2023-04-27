@@ -10,7 +10,8 @@ const InputField = ({ addTodo }) => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
+<div>
+<form action="" onSubmit={handleSubmit}>
       <input
         type="text"
         className="todo-input"
@@ -18,7 +19,11 @@ const InputField = ({ addTodo }) => {
         placeholder="Create a new todo…"
         onChange={(e) => setValue(e.target.value)}
       />
+
     </form>
+
+</div>
+
   );
 };
 

@@ -33,6 +33,7 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
           </svg>
         </span>
       </div>
+
     </div>
   );
 };

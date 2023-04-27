@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import InputField from './components/inputField'
 import TodoList from './components/TodoList'
-import { v4 as uuidv4 } from 'uuid';
+import OutputField from './components/OutputField'
+import { v4 as uuidv4 } from 'uuid'
 uuidv4();
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           deleteTodo={deleteTodo}/>
           
           ))}
+          <OutputField/>
       </div>
 
       
