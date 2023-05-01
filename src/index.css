@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: "JetBrains Mono", monospace;
@@ -14,10 +13,28 @@ body {
   background-repeat: no-repeat;
 }
 
+.wrapper.dark {
+  background-image: url(assets/images/bg-mobile-dark.jpg);
+  background-size: 100% 27vh;
+  background-repeat: no-repeat;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+}
+
 @media (min-width: 768px) {
-  body {
-    background-image: url(assets/images/bg-desktop-light.jpg);
+  .wrapper.dark {
+    background-image: url(assets/images/bg-desktop-dark.jpg);
     background-size: 100% 27vh;
+    background-repeat: no-repeat;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
   }
 
+  .wrapper.light {
+    background-image: url(assets/images/bg-desktop-light.jpg);
+    background-size: 100% 27vh;
+    background-repeat: no-repeat;
+  }
 }

@@ -1,29 +1,40 @@
 const TodoList = ({ task, toggleComplite, deleteTodo }) => {
   return (
-    <div
-      className="lists">
-      <div className={`left-box ${task.complited ? "complited" : ""}`}
-      onClick={() => toggleComplite(task.id)}>
-        
+    <div className="lists">
+      <div
+        className={`left-box ${task.complited ? "complited" : ""}`}
+        onClick={() => toggleComplite(task.id)}
+      >
         <button className="check-btn ">
-          <div className={`check-icon ${task.complited ? "complited && checked-icon" : ""}`}
-      onClick={() => toggleComplite(task.id)}>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
-                <path
-                  fill="none"
-                  stroke="#FFF"
-                  stroke-width="2"
-                  d="M1 4.304L3.696 7l6-6"
-                />
-              </svg>
-            </span>
+          <div
+            className={`check-icon ${
+              task.complited ? "complited && checked-icon" : ""
+            }`}
+            onClick={() => toggleComplite(task.id)}
+          >
+            {task.complited ? (
+              <span>
+                <svg
+                  className="checksvg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="11"
+                  height="9"
+                >
+                  <path
+                    fill="none"
+                    stroke="#fcfcff"
+                    stroke-width="2"
+                    d="M1 4.304L3.696 7l6-6"
+                  />
+                </svg>
+              </span>
+            ) : null}
           </div>
         </button>
         <li className={"list"}>{task.task}</li>
       </div>
       <div className="remove-icon">
-        <span onClick={()=> deleteTodo(task.id)}>
+        <span onClick={() => deleteTodo(task.id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
             <path
               fill="#494C6B"
@@ -33,7 +44,6 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
           </svg>
         </span>
       </div>
-
     </div>
   );
 };
