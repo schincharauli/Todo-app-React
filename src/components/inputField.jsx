@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Features from "./Features";
 
 const InputField = ({ addTodo }) => {
   const [value, setValue] = useState("");
@@ -19,9 +20,7 @@ const InputField = ({ addTodo }) => {
         placeholder="Create a new todo…"
         onChange={(e) => setValue(e.target.value)}
       />
-
     </form>
-
 </div>
 
   );

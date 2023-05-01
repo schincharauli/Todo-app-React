@@ -5,9 +5,8 @@ import './App.css'
 import Header from './components/Header'
 import InputField from './components/inputField'
 import TodoList from './components/TodoList'
-import OutputField from './components/OutputField'
 import { v4 as uuidv4 } from 'uuid'
-
+import Features from './components/Features'
 uuidv4();
 
 
@@ -31,6 +30,9 @@ function App() {
     setTodos(todos.map(todo => todo.id === id ? {...todo, complited : !todo.complited} : todo))
   }
 
+
+  
+//  delete function
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
@@ -46,17 +48,19 @@ function App() {
         <div className="nav">
 
           <Header themeLight={themeLight} setThemeLight={setThemeLight} />
+          
 
-       
         </div>
         <InputField addTodo={addTodo}/>
         {todos.map((todo, index) => (
           <TodoList  task={todo} key={index}
           toggleComplite={toggleComplite}
           deleteTodo={deleteTodo}/>
+
           
           ))}
-          <OutputField/>
+        <Features todos={todos}/>
+
       </div>
     </div>
 

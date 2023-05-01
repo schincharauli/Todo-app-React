@@ -1,5 +1,3 @@
-
-
 .App {
   display: flex;
 }
@@ -126,6 +124,42 @@
 }
 
 
+.footer-one{
+  height: 48px;
+  width: 327px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: #9495A5;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  padding: 20px;
+}
 
+.wrapper.dark .footer-one{
+  background-color: #25273D;
+}
 
+.featured-div{
+  display: flex;
+}
 
+.footer-two{
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header,
+  .todo-input,
+  .footer-one,
+  .lists{
+    width: 540px;
+  }
+
+  .footer-two{
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+  }
+}
