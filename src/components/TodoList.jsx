@@ -35,6 +35,7 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
             ) : null}
           </div>
         </button>
+
         <li className={"list"}>{task.task}</li>
       </div>
       <div className="remove-icon">

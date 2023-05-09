@@ -38,9 +38,6 @@ function App() {
   }
 
 
-  
-  
-
   return (
 
     <div className={`App wrapper ${themeClass}`}>
@@ -51,6 +48,7 @@ function App() {
           
 
         </div>
+        
         <InputField addTodo={addTodo}/>
         {todos.map((todo, index) => (
           <TodoList  task={todo} key={index}

@@ -15,7 +15,7 @@ const Features = ({todos}) => {
     <div className="featured-div">
       <div className="footer-one">
 
-        <p>{unCompletedTodos.length}items left</p>
+        <p>{unCompletedTodos.length} items left</p>
 
         <div className="footer-two">
           <p>All</p>

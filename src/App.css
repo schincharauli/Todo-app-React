@@ -35,10 +35,14 @@
   width: 327px;
   border-radius: 5px;
   border: none;
+  outline: none;
   padding-left: 20px;
-  margin-top: 45px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  /* margin-top: 45px; */
+  /* margin-bottom: 20px; */
 }
+
+.input >.check-btn 
 
 .wrapper.dark input{
   background-color: #25273D;
@@ -149,9 +153,25 @@
   display: none;
 }
 
+.input{
+  display: flex;
+  height: 48px;
+  width: 327px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  background-color: white;
+  /* align-items: flex-star */
+}
+
+.input >.check-btn{
+  margin-top: 8px;
+}
+
 @media (min-width: 768px) {
   .header,
-  .todo-input,
+  .input,
   .footer-one,
   .lists{
     width: 540px;
@@ -163,3 +183,4 @@
     font-weight: bold;
   }
 }
+
