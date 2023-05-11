@@ -32,17 +32,14 @@
 .todo-input
 {
   height: 48px;
-  width: 327px;
   border-radius: 5px;
   border: none;
   outline: none;
-  padding-left: 20px;
+  padding-left: 30px;
   font-size: 16px;
-  /* margin-top: 45px; */
-  /* margin-bottom: 20px; */
 }
 
-.input >.check-btn 
+
 
 .wrapper.dark input{
   background-color: #25273D;
@@ -147,10 +144,23 @@
 
 .featured-div{
   display: flex;
+  flex-direction: column;
 }
 
 .footer-two{
-  display: none;
+  height: 48px;
+  width: 327px;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 12px;
+  color: #9495A5;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #FFF;
+  padding: 20px;
+  margin-top: 16px;
 }
 
 .input{
@@ -162,7 +172,6 @@
   margin-top: 45px;
   margin-bottom: 20px;
   background-color: white;
-  /* align-items: flex-star */
 }
 
 .input >.check-btn{
@@ -178,9 +187,11 @@
   }
 
   .footer-two{
-    display: flex;
-    gap: 15px;
     font-weight: bold;
+    height: 45px;
+    width: 300px;
+    margin-top: -45px;
+    margin-left: 109px;
   }
 }
 

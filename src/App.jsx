@@ -38,6 +38,20 @@ function App() {
   }
 
 
+
+
+  const handleComplete = (taskId) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === taskId) {
+        return { ...todo, completed: true };
+      } else {
+        return todo;
+      }
+    });
+    setTodos(updatedTodos);
+  };
+  
+
   return (
 
     <div className={`App wrapper ${themeClass}`}>
@@ -57,7 +71,7 @@ function App() {
 
           
           ))}
-        <Features todos={todos}/>
+        <Features todos={todos} handleComplete={handleComplete} />
 
       </div>
     </div>

@@ -16,7 +16,7 @@ const InputField = ({ addTodo, task, toggleComplite}) => {
       setCheck(false); 
     }
   };
-
+  
   return (
     <div className="input">
       <form action="" onSubmit={handleSubmit}>

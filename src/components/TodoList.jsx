@@ -1,7 +1,7 @@
 import Features from "./Features";
 
 
-const TodoList = ({ task, toggleComplite, deleteTodo }) => {
+const TodoList = ({ task, toggleComplite, deleteTodo, check, handleComplete }) => {
   return (
     <div className="li">
     <div className="lists">
@@ -9,12 +9,17 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
         className={`left-box ${task.complited ? "complited" : ""}`}
         onClick={() => toggleComplite(task.id)}
       >
-        <button className="check-btn ">
+        <button className={"check-btn"}>
           <div
-            className={`check-icon ${
+            className={`check-icon 
+            ${
               task.complited ? "complited && checked-icon" : ""
             }`}
-            onClick={() => toggleComplite(task.id)}
+            onClick={() => { 
+              toggleComplite(task.id) 
+              handleComplete(id)
+            }
+            }
           >
             {task.complited ? (
               <span>
@@ -36,7 +41,8 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
           </div>
         </button>
 
-        <li className={"list"}>{task.task}</li>
+        <li 
+        className={"list"}>{task.task}</li>
       </div>
       <div className="remove-icon">
         <span onClick={() => deleteTodo(task.id)}>
