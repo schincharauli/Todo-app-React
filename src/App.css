@@ -142,6 +142,10 @@
   background-color: #25273D;
 }
 
+.wrapper.dark .footer-two{
+  background-color: #25273D;
+}
+
 .featured-div{
   display: flex;
   flex-direction: column;
@@ -177,6 +181,10 @@
   margin-top: 45px;
   margin-bottom: 20px;
   background-color: white;
+}
+
+.wrapper.dark .input{
+  background-color: #25273D;
 }
 
 .input >.check-btn{
