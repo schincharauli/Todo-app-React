@@ -2,12 +2,12 @@ import App from "../App";
 
 
 
-const Features = ({todos}) => {
+const Features = ({todos, allFeatures, setFeatures, props, deleteComplated}) => {
 
 
     const count = todos.filter((todo) => !todo.complited).length;
     
-  
+    // console.log(props.features)
 
 
   return (
@@ -16,23 +16,21 @@ const Features = ({todos}) => {
         <p>{count} items left</p>
 
         <div className="footer-three">
-          <p>Clear Completed</p>
+          <p
+          onClick={() => deleteComplated()}
+          >Clear Completed</p>
         </div>
       </div>
       <div className="footer-two">
           <p
-          onClick={() => {
-            alert("all")
-          }}> All</p>
-
+         onClick={() => setFeatures("all")}
+          > All</p>
           <p
-          onClick={() => {
-            alert("dolly")
-          }}>Active</p>
+           onClick={() => setFeatures("active")}
+          >Active</p>
 
-          <p onClick={() => {
-            alert("done")
-          }}>Completed</p>
+          <p onClick={() => setFeatures("completed")}
+          >Completed</p>
         </div>
     </div>
   );

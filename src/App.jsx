@@ -42,6 +42,12 @@ const [features, setFeatures] = useState("all");
   }
 
 
+  // delete all the tasks 
+  function deleteComplated() {
+    const filtered = todos.filter((todo) => !todo.completed);
+    setFeatures(filtered);
+  }
+
 
   const handleComplete = (id, checked) => {
     const updatedTasks = todos.map((task) => {
@@ -82,11 +88,13 @@ const [features, setFeatures] = useState("all");
           <TodoList  task={todo} key={index}
           handleComplete={handleComplete}
           toggleComplite={toggleComplite}
-          deleteTodo={deleteTodo}/>
+          deleteTodo={deleteTodo}
+          deleteComplated={deleteComplated}/>
 
           
           ))}
-        <Features todos={todos} handleComplete={handleComplete} />
+        <Features todos={todos} deleteComplated={deleteComplated}
+        handleComplete={handleComplete} allFeatures={features} setFeatures={setFeatures} />
 
       </div>
     </div>
