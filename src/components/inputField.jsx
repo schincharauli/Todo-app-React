@@ -2,34 +2,30 @@ import { useState } from "react";
 import TodoList from "./TodoList";
 import Features from "./Features";
 
-const InputField = ({ addTodo, task, toggleComplite}) => {
+const InputField = ({ addTodo, task, toggleComplite }) => {
   const [check, setCheck] = useState(false);
   const [value, setValue] = useState("");
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value.trim() !== '') {
+    if (value.trim() !== "") {
       addTodo(value, check);
       setValue("");
-      setCheck(false); 
+      setCheck(false);
     }
   };
-  
+
   return (
     <div className="input">
       <form action="" onSubmit={handleSubmit}>
-      <button className="check-btn ">
+        <button className="check-btn ">
           <div
-            className={`check-icon ${
-              check ? "complited && checked-icon" : ""
-            }`}
+            className={`check-icon ${check ? "complited && checked-icon" : ""}`}
             onClick={() => {
-              setCheck(!check)
+              setCheck(!check);
             }}
           >
-            { true? (
+            {true ? (
               <span>
                 <svg
                   className="checksvg"

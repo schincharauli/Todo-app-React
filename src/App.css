@@ -100,14 +100,14 @@
 .check-btn {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .list {
   padding-left: 12px;
   font-size: 12px;
   font-weight: 400;
-  color: #494c6b;
-
+  cursor: pointer;
 }
 
 .left-box {
@@ -120,9 +120,11 @@
 }
 
 .complited {
-  color: #d1d2da;
+  color: #D1D2DA;
   text-decoration: line-through;
 }
+
+
 
 
 .footer-one{
@@ -168,8 +170,24 @@
   cursor: pointer;
 }
 
+.wrapper.dark .footer-two p:hover{
+  font-weight: bolder;
+  color: #d1d2ed;
+}
+
+.footer-two p:hover{
+  font-weight: bolder;
+  color: #3f3f48;
+}
+
+
 .footer-three{
   cursor: pointer;
+}
+
+.footer-three:hover{
+  font-weight: bold;
+  color: #3f3f48;
 }
 
 .input{
