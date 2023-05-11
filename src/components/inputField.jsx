@@ -11,7 +11,7 @@ const InputField = ({ addTodo, task, toggleComplite}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value.trim() !== '') {
-      addTodo(value);
+      addTodo(value, check);
       setValue("");
       setCheck(false); 
     }

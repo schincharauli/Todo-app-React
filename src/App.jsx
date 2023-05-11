@@ -12,6 +12,8 @@ uuidv4();
 
 
 function App() {
+// check for marked icon in input field
+  // const [check, setCheck] = useState(false);
 
   // dark mode
   const [themeLight, setThemeLight] = useState(true);
@@ -19,9 +21,9 @@ function App() {
 
   // main function
   const [todos, setTodos] = useState([])
-  const addTodo = todo => {
+  const addTodo = (todo, check) => {
     setTodos([...todos, {
-      id: uuidv4(), task: todo, complited: false, isEditing: false
+      id: uuidv4(), task: todo, complited: check, isEditing: false
     }])
   }
 
@@ -39,16 +41,14 @@ function App() {
 
 
 
-
-  const handleComplete = (taskId) => {
-    const updatedTodos = todos.map((todo) => {
-      if (todo.id === taskId) {
-        return { ...todo, completed: true };
-      } else {
-        return todo;
+  const handleComplete = (id, checked) => {
+    const updatedTasks = todos.map((task) => {
+      if (task.id === id) {
+        return { ...task, complited: checked };
       }
+      return task;
     });
-    setTodos(updatedTodos);
+    setTasks(updatedTasks);
   };
   
 
@@ -63,9 +63,11 @@ function App() {
 
         </div>
         
-        <InputField addTodo={addTodo}/>
+        <InputField addTodo={addTodo} toggleComplite={toggleComplite} />
+        
         {todos.map((todo, index) => (
           <TodoList  task={todo} key={index}
+          handleComplete={handleComplete}
           toggleComplite={toggleComplite}
           deleteTodo={deleteTodo}/>
 

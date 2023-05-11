@@ -1,23 +1,17 @@
 import App from "../App";
-import { useEffect, useState } from "react";
 
 
 
-const Features = ({todos, handleComplete, toggleComplite}) => {
+const Features = ({todos}) => {
 
-  
-  
-  const [unCompletedCount, setUnCompletedCount] = useState(0);
 
-  useEffect(() => {
-    const count = todos.filter((todo) => !todo.completed).length;
-    setUnCompletedCount(count);
-  }, [todos, handleComplete]);
+    const count = todos.filter((todo) => !todo.complited).length;
+
 
   return (
     <div className="featured-div">
       <div className="footer-one">
-        <p>{unCompletedCount} items left</p>
+        <p>{count} items left</p>
 
         <div className="footer-three">
           <p>Clear Completed</p>
