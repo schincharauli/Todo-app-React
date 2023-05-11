@@ -12,8 +12,10 @@ uuidv4();
 
 
 function App() {
-// check for marked icon in input field
-  // const [check, setCheck] = useState(false);
+  
+const [features, setFeatures] = useState("all");
+
+
 
   // dark mode
   const [themeLight, setThemeLight] = useState(true);
@@ -52,6 +54,17 @@ function App() {
   };
   
 
+
+    const showComplited = todos.filter((todo) => todo.complited);
+
+
+
+    const showUncompleted = todos.filter((todo) => !todo.complited);
+
+    const array = features === "all" ? todos : features === "active" ? showUncompleted : showComplited;
+ 
+
+
   return (
 
     <div className={`App wrapper ${themeClass}`}>
@@ -65,7 +78,7 @@ function App() {
         
         <InputField addTodo={addTodo} toggleComplite={toggleComplite} />
         
-        {todos.map((todo, index) => (
+        {array.map((todo, index) => (
           <TodoList  task={todo} key={index}
           handleComplete={handleComplete}
           toggleComplite={toggleComplite}

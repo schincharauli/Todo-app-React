@@ -6,6 +6,8 @@ const Features = ({todos}) => {
 
 
     const count = todos.filter((todo) => !todo.complited).length;
+    
+  
 
 
   return (
@@ -18,9 +20,19 @@ const Features = ({todos}) => {
         </div>
       </div>
       <div className="footer-two">
-          <p>All</p>
-          <p>Active</p>
-          <p>Completed</p>
+          <p
+          onClick={() => {
+            alert("all")
+          }}> All</p>
+
+          <p
+          onClick={() => {
+            alert("dolly")
+          }}>Active</p>
+
+          <p onClick={() => {
+            alert("done")
+          }}>Completed</p>
         </div>
     </div>
   );

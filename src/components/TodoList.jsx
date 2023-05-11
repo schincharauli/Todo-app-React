@@ -1,7 +1,7 @@
 import Features from "./Features";
 
 
-const TodoList = ({ task, toggleComplite, deleteTodo, check, handleComplete }) => {
+const TodoList = ({ task, toggleComplite, deleteTodo }) => {
   return (
     <div className="li">
     <div className="lists">
