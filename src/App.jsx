@@ -8,6 +8,7 @@ import TodoList from "./components/TodoList";
 import { v4 as uuidv4 } from "uuid";
 import Features from "./components/Features";
 uuidv4();
+import axios from "axios";
 
 function App() {
   const [features, setFeatures] = useState("all");
@@ -18,16 +19,34 @@ function App() {
 
   // main function
   const [todos, setTodos] = useState([]);
-  const addTodo = (todo, check) => {
-    setTodos([
-      ...todos,
+
+  // GET REQUEST METHOD
+  useEffect(() => {
+    const fetchTestTasks = async () => {
+      const { data } = await axios.get(
+        "https://to-do-app-1ngp.onrender.com/api/list"
+      );
+      setTodos(data);
+    };
+    fetchTestTasks();
+  }, []);
+
+  // POST REQUEST METHOD
+  const addTodo = async (todo, check) => {
+    const addTodo = await axios.post(
+      "https://to-do-app-1ngp.onrender.com/api/list",
       {
-        id: uuidv4(),
         task: todo,
-        complited: check,
-        isEditing: false,
+        completed: check,
       },
-    ]);
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+    setTodos([...todos, addTodo.data]);
   };
 
   // to check tasks as complited

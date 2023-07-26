@@ -1,20 +1,4 @@
-import { useEffect, useState } from "react";
-import Features from "./Features";
-import axios from "axios";
-
 const TodoList = ({ task, toggleComplite, deleteTodo }) => {
-  const [testTask, setTestTask] = useState([]);
-  useEffect(() => {
-    const fetchTestTasks = async () => {
-      const { data } = await axios.get(
-        "https://to-do-app-1ngp.onrender.com/api/list"
-      );
-      setTestTask(data);
-    };
-    fetchTestTasks();
-  }, []);
-
-  console.log(testTask);
   return (
     <div className="li">
       <div className="lists">
@@ -50,14 +34,7 @@ const TodoList = ({ task, toggleComplite, deleteTodo }) => {
             </div>
           </button>
 
-          {/* <li className={"list"}>{task.task}</li> */}
-          <li className={"list"}>
-            {testTask.map((task) => {
-              <ul key={testTask._id}>
-                <li className={"list"}>{testTask.data}</li>;
-              </ul>;
-            })}
-          </li>
+          <li className={"list"}>{task.task}</li>
         </div>
 
         <div className="remove-icon">
