@@ -59,14 +59,25 @@ function App() {
   };
 
   //  delete function
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const deleteTask = async (id) => {
+    try {
+      await axios.delete("https://to-do-app-1ngp.onrender.com/api/list/" + id);
+      setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   };
 
-  function deleteComplated() {
-    const filtered = todos.filter((todo) => !todo.complited);
-    setTodos(filtered);
-  }
+  const deleteCompletedTask = async (id) => {
+    try {
+      await axios.delete("https://to-do-app-1ngp.onrender.com/api/list/");
+
+      const filtered = todos.filter((todo) => !todo.complited);
+      setTodos(filtered);
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
+  };
 
   const handleComplete = (id, checked) => {
     const updatedTasks = todos.map((task) => {
@@ -104,13 +115,13 @@ function App() {
             key={index}
             handleComplete={handleComplete}
             toggleComplite={toggleComplite}
-            deleteTodo={deleteTodo}
-            deleteComplated={deleteComplated}
+            deleteTodo={deleteTask}
+            deleteComplated={deleteCompletedTask}
           />
         ))}
         <Features
           todos={todos}
-          deleteComplated={deleteComplated}
+          deleteComplated={deleteCompletedTask}
           handleComplete={handleComplete}
           allFeatures={features}
           setFeatures={setFeatures}
