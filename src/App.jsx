@@ -58,7 +58,7 @@ function App() {
     );
   };
 
-  //  delete function
+  // DELETE REQUEST METHOD
   const deleteTask = async (id) => {
     try {
       await axios.delete("https://to-do-app-1ngp.onrender.com/api/list/" + id);
@@ -68,30 +68,44 @@ function App() {
     }
   };
 
+  // DELETE ALL REQUEST METHOD
   const deleteCompletedTask = async (id) => {
     try {
       await axios.delete("https://to-do-app-1ngp.onrender.com/api/list/");
 
-      const filtered = todos.filter((todo) => !todo.complited);
+      const filtered = todos.filter((todo) => !todo.completed);
       setTodos(filtered);
     } catch (error) {
       console.error("Error deleting task:", error);
     }
   };
 
-  const handleComplete = (id, checked) => {
-    const updatedTasks = todos.map((task) => {
-      if (task.id === id) {
-        return { ...task, complited: checked };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
+  // PUT REQUEST METHOD
+  const updateCompletedTask = async (id, completed) => {
+    try {
+      const updatedPUt = await axios.put(
+        `https://to-do-app-1ngp.onrender.com/api/list/${id}`,
+        {
+          completed,
+        }
+      );
+      const updatedTasks = todos.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed };
+        }
+        return task;
+      });
+      setTodos(updatedTasks);
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   };
 
-  const showComplited = todos.filter((todo) => todo.complited);
+  console.log(todos);
 
-  const showUncompleted = todos.filter((todo) => !todo.complited);
+  const showComplited = todos.filter((todo) => todo.completed);
+
+  const showUncompleted = todos.filter((todo) => !todo.completed);
 
   const array =
     features === "all"
@@ -113,8 +127,8 @@ function App() {
           <TodoList
             task={todo}
             key={index}
-            handleComplete={handleComplete}
-            toggleComplite={toggleComplite}
+            handleComplete={updateCompletedTask}
+            // toggleComplite={toggleComplite}
             deleteTodo={deleteTask}
             deleteComplated={deleteCompletedTask}
           />
@@ -122,7 +136,6 @@ function App() {
         <Features
           todos={todos}
           deleteComplated={deleteCompletedTask}
-          handleComplete={handleComplete}
           allFeatures={features}
           setFeatures={setFeatures}
         />

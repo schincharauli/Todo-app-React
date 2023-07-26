@@ -1,20 +1,20 @@
-const TodoList = ({ task, toggleComplite, deleteTodo }) => {
+const TodoList = ({ task, deleteTodo, handleComplete }) => {
   return (
     <div className="li">
       <div className="lists">
         <div
-          className={`left-box ${task.complited ? "complited" : ""}`}
-          onClick={() => toggleComplite(task.id)}
+          className={`left-box ${task.completed ? "complited" : ""}`}
+          onClick={() => handleComplete(task.id, !task.completed)}
         >
           <button className={"check-btn"}>
             <div
               className={`check-icon 
-            ${task.complited ? "complited && checked-icon" : ""}`}
+            ${task.completed ? "complited && checked-icon" : ""}`}
               onClick={() => {
-                toggleComplite(task.id);
+                handleComplete(task.id, !task.completed);
               }}
             >
-              {task.complited ? (
+              {task.completed ? (
                 <span>
                   <svg
                     className="checksvg"
